@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FS Code Task</title>
+    <link rel="stylesheet" href="./scss/style.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="org">
+        <ul class="main_ul">
+          <!-- Root category -->
+          <li class="root_category">
+            <div>
+              <span>Categories</span>
+              <img onclick="addNode(this)" class="add_btn" src="./icon/add.svg" alt="" />
+            </div>
+            <!-- Here are the other categories -->
+            <ul>
+              <li class="category">
+                <div>
+                  <span>First category</span>
+                  <img onclick="addNode(this)" class="add_btn" src="./icon/add.svg" alt="" />
+                  <img onclick="editNode(this)" class="edit_btn" src="./icon/edit.svg" alt="" />
+                  <img onclick="removeNode(this)" class="remove_btn" src="./icon/remove.svg" alt="" />
+                </div>
+              </li>
+              <li class="category">
+                <div>
+                  <span>Second category</span>
+                  <img onclick="addNode(this)" class="add_btn" src="./icon/add.svg" alt="" />
+                  <img onclick="editNode(this)" class="edit_btn" src="./icon/edit.svg" alt="" />
+                  <img onclick="removeNode(this)" class="remove_btn" src="./icon/remove.svg" alt="" />
+                </div>
+              </li>
+              <li class="category">
+                <div>
+                  <span>Third category</span>
+                  <img onclick="addNode(this)" class="add_btn" src="./icon/add.svg" alt="" />
+                  <img onclick="editNode(this)" class="edit_btn" src="./icon/edit.svg" alt="" />
+                  <img onclick="removeNode(this)" class="remove_btn" src="./icon/remove.svg" alt="" />
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <script src="./js/index.js"></script>
+  </body>
+</html>
