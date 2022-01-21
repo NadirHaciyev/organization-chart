@@ -10,7 +10,7 @@ function addNode(e) {
         <div>
           <input type="text" placeholder="Category name" />
           <img onclick="removeNode(this)" src="./icon/cancel.svg" alt="" />
-          <img onclick="saveNode(this)" src="./icon/save.svg" alt="" />
+          <img onclick="saveNode(this)" class="save_btn" src="./icon/save.svg" alt="" />
         </div>
       </li>
     `;
@@ -29,7 +29,7 @@ function addNode(e) {
       <div>
         <input type="text" placeholder="Category name" />
         <img onclick="removeNode(this)" src="./icon/cancel.svg" alt="" />
-        <img onclick="saveNode(this)" src="./icon/save.svg" alt="" />
+        <img onclick="saveNode(this)" class="save_btn" src="./icon/save.svg" alt="" />
       </div>
         `;
     li.classList.add("category");
@@ -83,3 +83,11 @@ function removeNode(e) {
   // Delete ul if ul has only one child, delete li if ul has many children  
   ulNode.children.length == 1 ? ulNode.remove() : liNode.remove()
 };
+
+//* Added enter evenet. Click enter for save node  
+document.addEventListener('keydown', (e) => {
+  if(e.code === 'Enter') {
+    const input = [...document.querySelectorAll('img[class="save_btn"]')]
+    input.length == 0 || input[input.length - 1].click()
+  }
+})
