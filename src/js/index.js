@@ -8,13 +8,17 @@ function addNode(e) {
     ul.innerHTML = `
       <li class="category">
         <div>
-          <input type="text" placeholder="Category name" autofocus />
+          <input type="text" placeholder="Category name" />
           <img onclick="removeNode(this)" src="./icon/cancel.svg" alt="" />
           <img onclick="saveNode(this)" src="./icon/save.svg" alt="" />
         </div>
       </li>
     `;
     liNode.appendChild(ul)
+
+    // Focus to input when new category added
+    const input = ul.firstElementChild.firstElementChild.firstElementChild
+    input.focus()
   }
   
   // If liNode has many children, add 'li' to liNode
@@ -23,13 +27,17 @@ function addNode(e) {
     const li = document.createElement("li");
     li.innerHTML = `
       <div>
-        <input type="text" placeholder="Category name" autofocus />
+        <input type="text" placeholder="Category name" />
         <img onclick="removeNode(this)" src="./icon/cancel.svg" alt="" />
         <img onclick="saveNode(this)" src="./icon/save.svg" alt="" />
       </div>
         `;
     li.classList.add("category");
     ulNode.appendChild(li);
+    
+    // Focus to input when new category added
+    const input = li.firstElementChild.firstElementChild
+    input.focus()
   }
 };
 
@@ -49,7 +57,6 @@ function saveNode(e) {
   `
 };
 
-
 //* If edit icon is clicked, getting category text and equal to input value. Then replace span(categoryName) to input 
 function editNode(e) {
   // Get div and span(categoryName)
@@ -58,15 +65,14 @@ function editNode(e) {
   
   // Get edit icon and set it is attributes. Because edit icon was clicked, this time edit icon must be changed to save icon
   const editIcon = div.children[2]
-  // editIcon.attributes.src.value = `./icon/save.svg`
   editIcon.setAttribute('src', './icon/save.svg')
   editIcon.setAttribute('onclick', 'saveNode(this)')
   editIcon.className = `save_btn`
   
   const newInput = document.createElement('input')
   newInput.value = categoryName.innerText
-  newInput.setAttribute('autofocus', '')
   div.replaceChild(newInput, categoryName)
+  newInput.focus()
 };
 
 //* If remove icon and cancel icon are clicked, run this funcion
