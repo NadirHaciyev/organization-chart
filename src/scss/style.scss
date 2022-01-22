@@ -135,7 +135,7 @@ img {
             content: '';
             height: 1px;
             transform: translateY(-10px);
-            width: 130%;
+            width: calc(100% + 10px);
             background: #c3d8e0;
             position: absolute;
             top: 0;
@@ -145,7 +145,7 @@ img {
               content: '';
               height: 1px;
               transform: translate(50%, -10px);
-              width: 57%;
+              width: calc(50% + 10px);
               background: #c3d8e0;
               position: absolute;
               top: 0;
@@ -156,7 +156,7 @@ img {
               content: '';
               height: 1px;
               transform: translate(-50%, -10px);
-              width: 57%;
+              width: calc(50% + 10px);
               background: #c3d8e0;
               position: absolute;
               top: 0;
